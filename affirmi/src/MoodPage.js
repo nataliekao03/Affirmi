@@ -38,6 +38,7 @@ const MoodPage = () => {
     console.log(`Selected mood: ${mood}`);
     // Perform actions based on the selected mood
     storeMoodInDatabase(mood);
+    navigate("/Chatbot");
   };
 
   const storeMoodInDatabase = (mood) => {
@@ -52,7 +53,6 @@ const MoodPage = () => {
       const date = new Date().toISOString().slice(0, 10); // Gets the date in YYYY-MM-DD format
       const moodRef = ref(db, `users/${encodedEmail}/moods/${date}`);
       set(moodRef, { mood: mood, timestamp: new Date().toISOString() });
-      //ADD NAVIGATION TO POST-MOODPAGE PAGE
     } else {
       console.error("User not authenticated or email is missing");
     }
