@@ -66,14 +66,16 @@ const MoodPage = () => {
           <button
             className="calendar-button"
             onClick={() => navigate("/calendar")}
-          ></button>
+          >
+            Log
+          </button>
           <h1>affirmi</h1>
           <button className="sign-out-button" onClick={signOut}>
             Sign Out
           </button>
         </div>
-        <div className="login-container">
-          <p>How are you feeling?</p>
+        <div className="mood-container">
+          <p className="typewriter">How are you feeling?</p>
           <div className="mood-buttons">
             <button onClick={() => handleMoodClick("MAD")}>MAD</button>
             <button onClick={() => handleMoodClick("SAD")}>SAD</button>
