@@ -6,6 +6,7 @@ const Chatbot = () => {
   const navigate = useNavigate();
   const [response, setResponse] = useState("");
   const [query, setQuery] = useState("");
+  const [chatLog, setChatLog] = useState([]);
 
   const api_key = process.env.REACT_APP_API_KEY;
 
@@ -29,7 +30,15 @@ const Chatbot = () => {
           },
         }
       );
-      setResponse(result.data.choices[0].message.content);
+      const botResponse = result.data.choices[0].message.content;
+      setResponse(botResponse);
+      // Update chat log with user and bot messages
+      const newChatLog = [
+        ...chatLog,
+        { role: "you", content: query },
+        { role: "affirmi bot", content: botResponse }
+      ];
+      setChatLog(newChatLog);
     } catch (error) {
       console.error("Error calling OpenAI API:", error);
     }
@@ -62,7 +71,14 @@ const Chatbot = () => {
           />
           <button type="submit">send</button>
         </form>
-        <p className="response">response: {response}</p>
+        <div className="chat-log">
+          {chatLog.map((message, index) => (
+            <div key={index} className={message.role}>
+              <span>{message.role}: </span>
+              {message.content}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

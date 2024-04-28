@@ -230,3 +230,10 @@ button:hover {
 .response {
   padding: 5px 20px;
 }
+
+.chat-log {
+  display: flex;
+  flex-direction: column; /* Adjust direction as needed */
+  align-items: flex-start;
+  padding: 0 350px;
+}
