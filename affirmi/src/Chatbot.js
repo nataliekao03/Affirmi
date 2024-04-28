@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const Chatbot = () => {
+  const navigate = useNavigate();
   const [response, setResponse] = useState('');
   const [query, setQuery] = useState('');
 
@@ -33,8 +35,14 @@ const Chatbot = () => {
     }
   };
 
+  // Function to back out
+  const back = () => {
+    navigate('/MoodPage');
+  };
+
   return (
     <div>
+      <button onClick={back}>Back</button>
       <form onSubmit={handleSubmit}>
         <input type="text" value={query} onChange={handleInputChange} />
         <button type="submit">Ask</button>
