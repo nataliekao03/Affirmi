@@ -1,3 +1,8 @@
+body {
+  font-family: "JetBrains Mono", monospace;
+  color: #555;
+}
+
 .App {
   text-align: center;
 }
@@ -37,9 +42,8 @@
   }
 }
 
-
 .login-container {
-  background-color: #333;
+  background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -48,17 +52,19 @@
 
 input {
   width: 100%;
+  font-family: "JetBrains Mono", monospace;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #555;
   border-radius: 5px;
   box-sizing: border-box;
-  background-color: #333;
-  color: #fff;
+  background-color: white;
+  color: #555;
 }
 
 button {
-  background-color: #4CAF50;
+  font-family: "JetBrains Mono", monospace;
+  background-color: #555;
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -78,7 +84,9 @@ button.mood-buttons {
 }
 
 button:hover {
-  background-color: #45a049;
+  background-color: white;
+  color: #555;
+  border: 1px solid #555;
 }
 
 .password-reset-link {
@@ -95,6 +103,53 @@ button:hover {
 .header {
   display: flex;
   align-items: center;
+  justify-self: flex-start;
   justify-content: space-between;
 }
 
+.header h1 {
+  background-color: white;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+/*Gradient Background*/
+@keyframes gradientBackground {
+  0% {
+    background: linear-gradient(to bottom right, lightblue, rgb(172, 231, 172));
+  }
+  25% {
+    background: linear-gradient(
+      to right,
+      rgb(172, 231, 172),
+      rgb(249, 249, 181)
+    );
+  }
+  50% {
+    background: linear-gradient(to bottom right, rgb(249, 249, 181), pink);
+  }
+  75% {
+    background: linear-gradient(to bottom right, pink, lavender);
+  }
+  100% {
+    background: linear-gradient(to bottom right, lavender, lightblue);
+  }
+}
+
+.background {
+  animation: gradientBackground 10s ease infinite;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+
+.mood-struct {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
