@@ -67,6 +67,16 @@ button {
   margin: 10px;
 }
 
+button.mood-buttons {
+  background-color: #3a081f;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
 button:hover {
   background-color: #45a049;
 }
@@ -81,3 +91,10 @@ button:hover {
 .password-reset-link:hover {
   text-decoration: underline;
 }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+

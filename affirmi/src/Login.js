@@ -23,7 +23,7 @@ const Login = () => {
     // Firebase sign-in with email and password
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        navigate('/dashboard');
+        navigate('/MoodPage');
       })
       .catch((error) => {
         setErrorMessage('Wrong email or password');
@@ -44,7 +44,7 @@ const Login = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         alert('Account created successfully!');
-        navigate('/dashboard');
+        navigate('/MoodPage');
       })
       // Handles different errors with signing up
       .catch((error) => {

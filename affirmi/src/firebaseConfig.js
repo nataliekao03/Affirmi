@@ -1,10 +1,12 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth/web-extension';
+import { getDatabase } from 'firebase/database';
 
 // Connect app to Firebase services
 const firebaseConfig = {
   apiKey: "AIzaSyBoZllS9BMob0Z7ynJwXTjIUE1pbz6reS0",
   authDomain: "affirmi.firebaseapp.com",
+  databaseURL: "https://affirmi-default-rtdb.firebaseio.com",
   projectId: "affirmi",
   storageBucket: "affirmi.appspot.com",
   messagingSenderId: "270116631270",
@@ -16,5 +18,6 @@ const firebaseConfig = {
 // auth variable provides access to Firebase authentication functionality
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+const database = getDatabase(app);
 
-export { auth };
+export { auth, database };
