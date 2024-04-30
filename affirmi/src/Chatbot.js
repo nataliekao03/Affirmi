@@ -21,7 +21,11 @@ const Chatbot = () => {
         "https://api.openai.com/v1/chat/completions",
         {
           model: "gpt-3.5-turbo-1106",
-          messages: [{ role: "user", content: query }],
+          messages: [
+            { role: "system", content: "You are a world class therapist. You are a good friend and a good listener. You are always ready to help. You will provide advice and affirmations to help the user." },
+            { role: "user", content: query }
+
+          ],
         },
         {
           headers: {
