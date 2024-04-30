@@ -233,7 +233,12 @@ button:hover {
 
 .chat-log {
   display: flex;
-  flex-direction: column; /* Adjust direction as needed */
+  flex-direction: column;
   align-items: flex-start;
-  padding: 0 350px;
+  padding: 0 350px; /* Adjust as needed */
+  min-height: 100vh; /* Adjust according to your header/footer height */
+  overflow-y: auto;
+  background: linear-gradient(to bottom right, lightblue, rgb(172, 231, 172)); /* Same gradient as .background */
+  animation: gradientBackground 10s ease infinite; /* Keep the gradient animation */
 }
+
